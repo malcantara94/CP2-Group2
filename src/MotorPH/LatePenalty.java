@@ -15,7 +15,7 @@ public class LatePenalty {
     public static double CalculateLatePenalty(int targetEmployeeId, int targetMonth) throws IOException
     {
         List<AttendanceRecord> attendanceRecordList = AttendanceRecord.getAttendanceRecordList().stream().filter(employee -> employee.getEmployeeID()== targetEmployeeId).collect(Collectors.toList());
-        EmployeeInfo employeeInfo = EmployeeInfo.getEmployeeInfo(targetEmployeeId);         
+        EmployeeInfo employeeInfo = EmployeeInfo.getEmployeeInfoByEmployeeId(targetEmployeeId);         
         //EmployeeInfo employeeInfo = EmployeeInfo.getEmployeeInfoList().stream().filter(employee -> employee.getEmployeeID()== targetEmployeeId).findAny().get();
         //Payroll payrollInfo = Payroll.getPayrollDetails(targetEmployeeId);
         double totalLateDeduction = 0;
@@ -55,3 +55,4 @@ public class LatePenalty {
         return totalLateDeduction;
     }
 }
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
